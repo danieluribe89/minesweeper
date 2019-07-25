@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.daniel.Minesweeper.DTO.Cell;
 import com.daniel.Minesweeper.DTO.Table;
 import com.daniel.Minesweeper.Helpers.TableHelper;
+import com.daniel.Minesweeper.Interfaces.DeckInterface;
 
 @RestController
 @RequestMapping("table")
-public class DeckService{
+public class DeckService implements DeckInterface{
 	
 	// Returns an easy Minesweeper
 	@GetMapping("easy")
