@@ -10,7 +10,6 @@ public interface DeckInterface {
 	public Table returnEasyDeck();
 
 	// Returns a middle Minesweeper
-	@GetMapping("medium")
 	public Table returnMediumDeck();
 
 	// Returns a hard Minesweeper
