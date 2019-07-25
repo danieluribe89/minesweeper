@@ -9,10 +9,12 @@ import com.daniel.Minesweeper.DTO.Cell;
 import com.daniel.Minesweeper.DTO.Table;
 import com.daniel.Minesweeper.Helpers.TableHelper;
 
-@Component
+@RestController
+@RequestMapping("table")
 public class DeckService{
 	
 	// Returns an easy Minesweeper
+	@GetMapping("easy")
 	public Table returnEasyDeck() {
 		Cell[][] array = fillArray(new Cell[8][8],7);
 		Set<String> bombs = repartBombs(8,array);
@@ -27,6 +29,7 @@ public class DeckService{
 	}
 
 	// Returns a middle Minesweeper
+	@GetMapping("medium")
 	public Table returnMediumDeck() {
 		Cell[][] array = fillArray(new Cell[12][12],11);
 		Set<String> bombs = repartBombs(12,array);
@@ -41,6 +44,7 @@ public class DeckService{
 	}
 
 	// Returns a hard Minesweeper
+	@GetMapping("hard")
 	public Table returnHardDeck() {
 		Cell[][] array = fillArray(new Cell[15][15],14);
 		Set<String> bombs = repartBombs(15,array);
