@@ -3,7 +3,9 @@ package com.daniel.Minesweeper.Service;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.daniel.Minesweeper.DTO.Cell;
 import com.daniel.Minesweeper.DTO.Table;
