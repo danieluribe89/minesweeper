@@ -10,19 +10,19 @@ public class TableFactory {
 	@Autowired
 	DeckService deckFac;
 
-	public Table returnEasyMinesweeper() {
-		return deckFac.returnEasyDeck();
-		
-	}
-
-	public Table returnMediumMinesweeper() {
-		return deckFac.returnMediumDeck();
-		
-	}
-
-	public Table returnHardMinesweeper() {
-		return deckFac.returnHardDeck();
-		
-	} 
+   public Table getTable(String shapeType){
+      if(shapeType == null){
+         return null;
+      }		
+      if(shapeType.equalsIgnoreCase("EASY")){
+    	  return deckFac.returnEasyDeck();
+	  } else if(shapeType.equalsIgnoreCase("MEDIUM")){
+		  return deckFac.returnMediumDeck();         
+	  } else if(shapeType.equalsIgnoreCase("HARD")){
+	   	  return deckFac.returnHardDeck();
+	  }
+		      
+      return null;
+	  }
 	
 }
