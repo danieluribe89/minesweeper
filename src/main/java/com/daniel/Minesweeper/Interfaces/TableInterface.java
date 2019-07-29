@@ -6,4 +6,6 @@ public interface TableInterface {
 
 	void selectCell(Cell[][] cells, int x, int y);
 
+	public void obtainNextCells(Cell[][] array, int x, int y);
+
 }

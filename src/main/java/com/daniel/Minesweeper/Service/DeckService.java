@@ -3,21 +3,17 @@ package com.daniel.Minesweeper.Service;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
 import com.daniel.Minesweeper.DTO.Cell;
 import com.daniel.Minesweeper.DTO.Table;
 import com.daniel.Minesweeper.Helpers.TableHelper;
 import com.daniel.Minesweeper.Interfaces.DeckInterface;
 
-@RestController
-@RequestMapping("table")
+@Component
 public class DeckService implements DeckInterface{
 	
 	// Returns an easy Minesweeper
-	@GetMapping("easy")
 	public Table returnEasyDeck() {
 		Cell[][] array = fillArray(new Cell[8][8],7);
 		Set<String> bombs = repartBombs(8,array);
@@ -32,7 +28,6 @@ public class DeckService implements DeckInterface{
 	}
 
 	// Returns a middle Minesweeper
-	@GetMapping("medium")
 	public Table returnMediumDeck() {
 		Cell[][] array = fillArray(new Cell[12][12],11);
 		Set<String> bombs = repartBombs(12,array);
@@ -47,7 +42,6 @@ public class DeckService implements DeckInterface{
 	}
 
 	// Returns a hard Minesweeper
-	@GetMapping("hard")
 	public Table returnHardDeck() {
 		Cell[][] array = fillArray(new Cell[15][15],14);
 		Set<String> bombs = repartBombs(15,array);
